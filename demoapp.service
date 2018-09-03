@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve EC2 Demo App
+After=network.target
+
+[Service]
+User=demo-user
+Group=nginx
+WorkingDirectory=/opt/EC2DemoApp
+Environment="PATH=/opt/EC2DemoApp/.venv/bin"
+ExecStart=/opt/EC2DemoApp/.venv/bin/gunicorn --workers 3 --bind unix:ec2demoapp.sock -m 007 wsgi
+
+[Install]
+WantedBy=multi-user.target

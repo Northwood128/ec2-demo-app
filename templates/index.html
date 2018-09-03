@@ -1,0 +1,21 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <title>AWS EC2 Demo</title>
+  <style>
+  #eclogo {
+    margin: 0 auto;
+    width: 100px;
+  }
+  </style>
+
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img id="ec2logo" src="{{ url_for('static', filename='Compute_AmazonEC2.png') }}" />
+        <h1>Howdy! I'm {{ instance_id }} and I will be your server today</h1>
+    </div>
+</body>
+</html>
