@@ -13,7 +13,7 @@ def hello():
     except HTTPError as e:
         instance_id = "Teapot"
 
-    return render_template('index.html', instance_id=instance_id)
+    return render_template('index.html', instance_id=str(instance_id))
 
 if __name__ == "__main__":
     EC2DemoApp.run(host='0.0.0.0')

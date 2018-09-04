@@ -22,15 +22,14 @@ export PIPENV_VENV_IN_PROJECT=true
 /usr/local/bin/pipenv install
 
 # Move Nginx configuration
-mv nginx.conf /etc/nginx.conf
+mv nginx.conf /etc/nginx/nginx.conf
 # Move SystemD Unit file
 mv demoapp.service /etc/systemd/system/demoapp.service
 
-# Setup right permissions on the directory
-chmod 710 /opt/EC2DemoApp
-
 # Create a service user to run the app
 adduser demo-user
+# Setup right permissions on the directory
+chmod 710 /opt/EC2DemoApp
 
 # Add the Nginx user to the service user's group, to allow it to access the app
 sudo usermod -a -G demo-user nginx
