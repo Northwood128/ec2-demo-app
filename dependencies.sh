@@ -19,7 +19,7 @@ git clone https://github.com/Northwood128/ec2-demo-app.git /opt/EC2DemoApp
 cd /opt/EC2DemoApp
 # https://pipenv.readthedocs.io/en/latest/advanced/#custom-virtual-environment-location
 export PIPENV_VENV_IN_PROJECT=true
-pipenv install
+/usr/local/bin/pipenv install
 
 # Move Nginx configuration
 mv nginx.conf /etc/nginx.conf
