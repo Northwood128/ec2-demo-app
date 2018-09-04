@@ -8,10 +8,10 @@ sudo yum update -y
 yum install -y git python3-pip python36 python36-devel gcc nginx
 
 # Upgrade Pip
-pip3 install --upgrade pipenv
+/usr/local/bin/pip3 install --upgrade pipenv
 
 # Install Pipenv
-pip3 install pipenv
+/usr/local/bin/pip3 install pipenv
 
 # Download the code from GitHub and install dependencies
 git clone https://github.com/Northwood128/ec2-demo-app.git /opt/EC2DemoApp
