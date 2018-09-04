@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Enable EPEL repo
 sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 
