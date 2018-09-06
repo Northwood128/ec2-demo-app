@@ -1,6 +1,5 @@
 from flask import Flask, render_template
 import urllib.request
-from urllib.error import HTTPError
 
 EC2DemoApp = Flask(__name__)
 
