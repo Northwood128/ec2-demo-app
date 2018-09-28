@@ -15,7 +15,6 @@ yum install -y git python3-pip python36 python36-devel gcc nginx
 
 # Download the code from GitHub and install dependencies
 git clone https://github.com/Northwood128/ec2-demo-app.git /opt/EC2DemoApp
-
 cd /opt/EC2DemoApp
 # https://pipenv.readthedocs.io/en/latest/advanced/#custom-virtual-environment-location
 export PIPENV_VENV_IN_PROJECT=true
@@ -26,10 +25,14 @@ mv nginx.conf /etc/nginx/nginx.conf
 # Move SystemD Unit file
 mv demoapp.service /etc/systemd/system/demoapp.service
 
-# Create a service user to run the app
+# Create a service user to run the app and grant him sudo access
 adduser demo-user
+gpasswd -a demo-user wheel
+
 # Setup right permissions on the directory
 chmod 710 /opt/EC2DemoApp
+chown -R demo-user:demo-user /opt/EC2DemoApp
+
 
 # Add the Nginx user to the service user's group, to allow it to access the app
 sudo usermod -a -G demo-user nginx
